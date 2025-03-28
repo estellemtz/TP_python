@@ -1,4 +1,3 @@
-# %%
 import dash
 from dash import dcc, html, dash_table, Input, Output
 import plotly.graph_objects as go
@@ -177,6 +176,4 @@ def update_dashboard(selected_locations):
     )
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-
 
