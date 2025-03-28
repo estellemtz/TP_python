@@ -176,6 +176,11 @@ def update_dashboard(selected_locations):
         qte_display,
         html.H5(qte_delta_display, className=f"{qte_color} text-center")
     )
+
+application = app.server
+
+
+
 if __name__ == '__main__':
     app.run_server(debug=True)
 
