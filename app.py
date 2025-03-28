@@ -6,7 +6,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 
 # Lecture des données
-data_path = r"C:\Users\33783\Downloads\data.csv"
+data_path = "data.csv"
 sales_data = pd.read_csv(data_path)
 sales_data.columns = sales_data.columns.str.strip()
 sales_data["Date"] = pd.to_datetime(sales_data["Date"], errors='coerce')
@@ -16,6 +16,8 @@ locations = sorted(sales_data["Location"].dropna().unique())
 
 # App Dash
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+
 
 app.layout = dbc.Container([
 
@@ -174,7 +176,7 @@ def update_dashboard(selected_locations):
         html.H5(qte_delta_display, className=f"{qte_color} text-center")
     )
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8055, jupyter_mode='external')
+    app.run_server(debug=True)
 
 
 
